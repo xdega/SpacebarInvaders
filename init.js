@@ -36,8 +36,8 @@ function keyDown(e){
     if(e.keyCode == 38) upKey = true;
     else if(e.keyCode == 40) downKey = true;
 
-    //if 'x' is pressed and they dont have too many lasers fired, add one to []
-    if(e.keyCode == 88 && lasers.length <= laserTotal){
+    //if 'x' or 'spacebar' is pressed and they dont have too many lasers fired, add one to []
+    if((e.keyCode == 88 || e.keyCode == 32) && lasers.length <= laserTotal){
         lasers.push( [ship_x + 25, ship_y - 20, 4, 20] );
     }
 }
@@ -100,8 +100,7 @@ function scoreTotal(){
         ctx.font = "bold 20px VT323";
         ctx.fillText("Click to Play", width / 2 - 56, height / 2 + 30);
         ctx.fillText("Use arrow keys to move", width / 2 - 100, height / 2 + 60);
-        ctx.fillText("Use the X key to shoot", width / 2 - 100, height / 2 + 90);
-
+        ctx.fillText("Use the X key or Spacebar to shoot", width / 2 - 100, height / 2 + 90);
     }
 
 }
